@@ -49,6 +49,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    height: 60px;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -82,18 +83,11 @@ body {
 }
 
 .logo-img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
-    border: 2px solid var(--highlight-color);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+   
     transition: all 0.3s ease;
-}
-
-.logo-img:hover {
-    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
-    transform: rotate(10deg);
 }
 
 .logo h1 {
@@ -306,7 +300,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
@@ -329,7 +322,6 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -402,6 +394,7 @@ body {
  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .about-section h2 {
@@ -431,7 +424,7 @@ body {
   font-size: 1.1rem;
   margin-bottom: 15px;
   line-height: 1.7;
-  color: #f1f1f1;
+  color: #333;
 }
 
 .about .btn {
@@ -466,3 +459,143 @@ body {
   transform: scale(1.05);
 }
 
+/* slot booking section css */
+/* Slot Booking Section */
+.slot {
+  padding: 50px 20px;
+  background: #f8f9fa;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.slot h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Date & Time Selection */
+.time-selection {
+  margin-bottom: 40px;
+}
+
+.time-selection label {
+  font-weight: 500;
+  margin-right: 8px;
+  color: #444;
+}
+
+.date-picker,
+.time-dropdown {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.date-picker:focus,
+.time-dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Default Message */
+.default-slots {
+  margin-top: 30px;
+}
+
+.select-time-message {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #777;
+}
+
+/* Slot Availability Layout */
+.slot-availability {
+  margin-top: 40px;
+}
+
+.slot-availability h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.slot-booking {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Individual Court Slot */
+.slot-booking div {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slot-booking div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.slot-booking img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.slot-booking h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.availability-status {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+.member-info {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+/* Book Now Button */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slot h2 {
+    font-size: 1.6rem;
+  }
+
+  .date-picker,
+  .time-dropdown {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

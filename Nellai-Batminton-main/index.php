@@ -123,7 +123,7 @@
         </div>
         
         <!-- Slot Availability Display -->
-        <!-- <div class="slot-availability" id="slotAvailability" style="display: none;">
+        <div class="slot-availability" id="slotAvailability" style="display: none;">
             <h3>Available Courts for <span id="selectedDate"></span> at <span id="selectedTime"></span></h3>
             <div class="slot-booking">
                 <div class="slot-1" data-court="1">
@@ -184,7 +184,7 @@
                 </div>
             </div>
         </div>
-         -->
+        
         <!-- Default Slot Display (when no time is selected) -->
         <div class="default-slots" id="defaultSlots">
             <p class="select-time-message">Please select a date and time slot to view court availability</p>
