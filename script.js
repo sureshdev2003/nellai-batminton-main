@@ -1,29 +1,5 @@
 // All JavaScript functionality wrapped in DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Gallery Navigation
-    const track = document.querySelector('.slide-track');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
-    if (track && prevBtn && nextBtn) {
-        let currentIndex = 0;
-        const slides = track.querySelectorAll('img');
-        const slideWidth = slides[0].offsetWidth;
-        
-        function updateSlidePosition() {
-            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
-        
-        prevBtn.addEventListener('click', () => {
-            currentIndex = Math.max(currentIndex - 1, 0);
-            updateSlidePosition();
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            currentIndex = Math.min(currentIndex + 1, slides.length - 1);
-            updateSlidePosition();
-        });
-    }
 
     // Time and Date Selection for Slot Availability
     const timeDropdown = document.getElementById('timeSlot');
@@ -170,4 +146,80 @@ document.addEventListener('DOMContentLoaded', function() {
         datePicker.value = today;
     }
   });
+
+
+  // ==============================
+// Image Slider Script
+// ==============================
+let currentIndex = 0;
+const slides = document.querySelector(".slides");
+const slideCount = document.querySelectorAll(".slide").length;
+
+// Create Arrows
+const slider = document.querySelector(".slider");
+const leftArrow = document.createElement("div");
+const rightArrow = document.createElement("div");
+leftArrow.innerHTML = "&#10094;";
+rightArrow.innerHTML = "&#10095;";
+leftArrow.classList.add("arrow", "left-arrow");
+rightArrow.classList.add("arrow", "right-arrow");
+slider.appendChild(leftArrow);
+slider.appendChild(rightArrow);
+
+// Create Dots
+const dotsContainer = document.createElement("div");
+dotsContainer.classList.add("dots");
+for (let i = 0; i < slideCount; i++) {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+}
+slider.appendChild(dotsContainer);
+const dots = dotsContainer.querySelectorAll(".dot");
+
+// Show Slide Function
+function showSlide(index) {
+  if (index < 0) index = slideCount - 1;
+  if (index >= slideCount) index = 0;
+  currentIndex = index;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+// Next & Prev
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
+
+// Auto play
+let slideTimer = setInterval(nextSlide, 5000);
+
+// Events
+rightArrow.addEventListener("click", () => {
+  nextSlide();
+  resetTimer();
+});
+leftArrow.addEventListener("click", () => {
+  prevSlide();
+  resetTimer();
+});
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    showSlide(index);
+    resetTimer();
+  });
+});
+
+// Reset timer when manually navigating
+function resetTimer() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(nextSlide, 5000);
+}
+
 

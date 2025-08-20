@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Oswald', sans-serif;
   line-height: 1.6;
   color: #333;
   background: #f9f9f9;
@@ -46,12 +46,23 @@ ul {
 .header {
   position: relative;
 }
-
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px ;
+    background: rgb(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+}
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 30px;
 }
 .logo img {
   height: 40px;
@@ -64,14 +75,15 @@ ul {
 
 /* Navbar */
 .navbar {
-  position: absolute;
+
   top: 0;
   right: 0;
-  padding: 20px 30px;
+  padding: 20px ;
 }
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 40px;
+  margin-right: 4rem;
 }
 .nav-links a {
   font-weight: 600;
@@ -88,28 +100,31 @@ ul {
 ============================== */
 .home-section {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
 }
 /* ==============================
    Slider Styles
 ============================== */
+/* Slider Container */
 .slider {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
 }
 
+/* All slides in a row */
 .slides {
   display: flex;
-  width: 300%; /* 3 slides */
+  width: 100%;
   height: 100%;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 }
 
+/* Each slide takes full screen */
 .slide {
-  flex: 1 0 100%;
+  min-width: 100%;
   height: 100%;
 }
 
@@ -119,12 +134,48 @@ ul {
   object-fit: cover;
 }
 
-.slides img {
-  width: 100%;
-  height: 90vh;
-  object-fit: cover;
-  display: block;
+/* Navigation arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.3s;
+  z-index: 5;
 }
+.arrow:hover {
+  background: rgba(0,0,0,0.7);
+}
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+/* Dots (indicators) */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.dot.active {
+  background: #ff6f00;
+}
+
 
 .slider-content {
   position: absolute;
@@ -160,11 +211,18 @@ ul {
 ============================== */
 .about {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   padding: 60px 10%;
   gap: 40px;
   background: #fff;
+}
+.about-content{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
 }
 
 .about .left {

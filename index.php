@@ -20,6 +20,7 @@
     <!-- header -->
     <div class="conatiner">
         <header class="header">
+            <div class="nav-header">
             <div class="logo">
                 <img src="./assets/badminton.png" class="logo-img">
                 <h1>NBA</h1>
@@ -40,6 +41,7 @@
                     <li><a href="admin/login.php">Admin</a></li>
                 </ul>
             </nav>
+            </div>
             <!-- Mobile Menu Overlay -->
 
 
@@ -47,29 +49,31 @@
             <div class="home-section">
                 <div class="slider">
                     <div class="slides">
-                        <img src="./assets/slot.jpg" alt="Slide 1">
-                        <img src="./assets/back-1.jpg" alt="Slide 2">
-                        <img src="./assets/back.jpg" alt="Slide 3">
+                        <div class="slide"><img src="./assets/slot.jpg" alt="Slide 1"></div>
+                        <div class="slide"><img src="./assets/back-1.jpg" alt="Slide 2"></div>
+                        <div class="slide"><img src="./assets/back.jpg" alt="Slide 3"></div>
                     </div>
-                </div>
-
-                <!-- Text Content Above Slider -->
-                <div class="slider-content">
-                    <h1>Nellai Badminton Academy</h1>
-                    <p>Welcome to the Court of Champions,<br>Where Every Shot Tells a Story!</p>
-                    <a href="#contact" class="btn">Contact Us</a>
                 </div>
             </div>
 
+            <!-- Text Content Above Slider -->
+            <div class="slider-content">
+                <h1>Nellai Badminton Academy</h1>
+                <p>Welcome to the Court of Champions,<br>Where Every Shot Tells a Story!</p>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+    </div>
 
 
-        </header>
+
+    </header>
 
     </div>
     <!-- About Section -->
     <section id="about" class="about">
-            <h2>About Us</h2>
-            <div class="left">
+        <h2>About Us</h2>
+        <div class="about-content">
+        <div class="left">
             <p>At Nellai Batmintation Academy, we are dedicated to nurturing the next generation of badminton champions.
                 Our academy offers top-notch coaching, state-of-the-art facilities, and a supportive community for
                 players of all levels.</p>
@@ -78,17 +82,18 @@
             <p>Join us in our mission to promote the sport of badminton and help you achieve your athletic goals.
                 Together, we can elevate your game to new heights!</p>
             <button class="btn">Learn More</button>
-            </div>
-            <div class="right">
-                    <img src="./assets/slot.jpg" class="about-img">
-            </div>
-          
+        </div>
+        <div class="right">
+            <img src="./assets/slot.jpg" class="about-img">
+        </div>
+        </div>
 
-        </section>
+
+    </section>
     <!-- Slot Booking -->
     <section id="slot" class="slot">
         <h2>Slot Booking</h2>
-        
+
         <!-- Time and Date Selection -->
         <div class="time-selection">
             <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
@@ -120,7 +125,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Slot Availability Display -->
         <div class="slot-availability" id="slotAvailability" style="display: none;">
             <h3>Available Courts for <span id="selectedDate"></span> at <span id="selectedTime"></span></h3>
@@ -183,80 +188,80 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Default Slot Display (when no time is selected) -->
         <div class="default-slots" id="defaultSlots">
             <p class="select-time-message">Please select a date and time slot to view court availability</p>
         </div>
     </section>
     <!-- gallery -->
- <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-slider">
-        <div class="slide-track">
-            <img src="./assets/slot.jpg" alt="Gallery 1">
-            <img src="./assets/slot.jpg" alt="Gallery 2">
-            <img src="./assets/slot.jpg" alt="Gallery 3">
-            <img src="./assets/slot.jpg" alt="Gallery 4">
-            <img src="./assets/slot.jpg" alt="Gallery 5">
-            <img src="./assets/slot.jpg" alt="Gallery 6">
-            <img src="./assets/slot.jpg" alt="Gallery 7">
-            <img src="./assets/slot.jpg" alt="Gallery 8">
-            <!-- duplicate for seamless loop -->
-            <img src="./assets/slot.jpg" alt="Gallery 1">
-            <img src="./assets/slot.jpg" alt="Gallery 2">
-            <img src="./assets/slot.jpg" alt="Gallery 3">
-            <img src="./assets/slot.jpg" alt="Gallery 4">
-            <img src="./assets/slot.jpg" alt="Gallery 5">
-            <img src="./assets/slot.jpg" alt="Gallery 6">
-            <img src="./assets/slot.jpg" alt="Gallery 7">
-            <img src="./assets/slot.jpg" alt="Gallery 8">
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-slider">
+            <div class="slide-track">
+                <img src="./assets/slot.jpg" alt="Gallery 1">
+                <img src="./assets/slot.jpg" alt="Gallery 2">
+                <img src="./assets/slot.jpg" alt="Gallery 3">
+                <img src="./assets/slot.jpg" alt="Gallery 4">
+                <img src="./assets/slot.jpg" alt="Gallery 5">
+                <img src="./assets/slot.jpg" alt="Gallery 6">
+                <img src="./assets/slot.jpg" alt="Gallery 7">
+                <img src="./assets/slot.jpg" alt="Gallery 8">
+                <!-- duplicate for seamless loop -->
+                <img src="./assets/slot.jpg" alt="Gallery 1">
+                <img src="./assets/slot.jpg" alt="Gallery 2">
+                <img src="./assets/slot.jpg" alt="Gallery 3">
+                <img src="./assets/slot.jpg" alt="Gallery 4">
+                <img src="./assets/slot.jpg" alt="Gallery 5">
+                <img src="./assets/slot.jpg" alt="Gallery 6">
+                <img src="./assets/slot.jpg" alt="Gallery 7">
+                <img src="./assets/slot.jpg" alt="Gallery 8">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- contact -->
-   <section id="contact" class="contact">
-    <footer class="footer">
-        <div class="footer-container">
+    <section id="contact" class="contact">
+        <footer class="footer">
+            <div class="footer-container">
 
-            <!-- Map -->
-            <div class="footer-map">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.123456789!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263ff45e3d123%3A0x9f8a1abf6cf84b1!2sYour%20Business%20Name!5e0!3m2!1sen!2sin!4v1682410242345!5m2!1sen!2sin"
-                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+                <!-- Map -->
+                <div class="footer-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.123456789!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263ff45e3d123%3A0x9f8a1abf6cf84b1!2sYour%20Business%20Name!5e0!3m2!1sen!2sin!4v1682410242345!5m2!1sen!2sin"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>📍 123 Main Street, Chennai, India</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>✉️ info@example.com</p>
+                </div>
+
             </div>
 
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+            <!-- Bottom Note -->
+            <div class="footer-bottom">
+                <p>© 2025 Your Company. All Rights Reserved.</p>
             </div>
-
-            <!-- Contact Info -->
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>📍 123 Main Street, Chennai, India</p>
-                <p>📞 +91 98765 43210</p>
-                <p>✉️ info@example.com</p>
-            </div>
-
-        </div>
-
-        <!-- Bottom Note -->
-        <div class="footer-bottom">
-            <p>© 2025 Your Company. All Rights Reserved.</p>
-        </div>
-    </footer>
-</section>
+        </footer>
+    </section>
 
 
     <script src="script.js"></script>
