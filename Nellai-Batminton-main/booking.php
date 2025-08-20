@@ -294,87 +294,55 @@
             
             <input type="hidden" name="booking_type" value="monthly">
 
-            <!-- Time Slot Selection -->
+            <!-- Slot Selection -->
             <h4 style="margin: 20px 0 15px 0; color: #333;">
-                <i class="fas fa-clock"></i> Select Your Preferred Time Slot
-            </h4>
-            
-            <div class="form-group">
-                <label for="monthlyTimeSlot">Time Slot *</label>
-                <select id="monthlyTimeSlot" name="time_slot" required>
-                    <option value="">Select Time Slot</option>
-                    <option value="06:00">06:00 AM</option>
-                    <option value="07:00">07:00 AM</option>
-                    <option value="08:00">08:00 AM</option>
-                    <option value="09:00">09:00 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="13:00">01:00 PM</option>
-                    <option value="14:00">02:00 PM</option>
-                    <option value="15:00">03:00 PM</option>
-                    <option value="16:00">04:00 PM</option>
-                    <option value="17:00">05:00 PM</option>
-                    <option value="18:00">06:00 PM</option>
-                    <option value="19:00">07:00 PM</option>
-                    <option value="20:00">08:00 PM</option>
-                    <option value="21:00">09:00 PM</option>
-                </select>
-                <small style="color: #666; display: block; margin-top: 5px;">
-                    You will be registered for this time slot for the entire month.
-                </small>
-            </div>
-
-            <!-- Court Selection -->
-            <h4 style="margin: 20px 0 15px 0; color: #333;">
-                <i class="fas fa-map-marker-alt"></i> Select Your Court
+                <i class="fas fa-clock"></i> Select Your Court
             </h4>
             
             <div class="slot-selection" id="monthlySlotSelection">
                 <div class="slot-option" data-slot="1">
                     <h4>Court 1</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="2">
                     <h4>Court 2</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="3">
                     <h4>Court 3</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="4">
                     <h4>Court 4</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="5">
                     <h4>Court 5</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="6">
                     <h4>Court 6</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="7">
                     <h4>Court 7</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
                 <div class="slot-option" data-slot="8">
                     <h4>Court 8</h4>
-                    <p class="monthly-avail">Available: 6/6 members</p>
+                    <p class="monthly-avail">Available: -</p>
                     <p>₹12000/month</p>
                 </div>
             </div>
 
             <input type="hidden" id="monthlySelectedSlot" name="selectedSlot" required>
-            <input type="hidden" id="monthlyStartDate" name="start_date" required>
 
             <!-- Payment Method -->
             <h4 style="margin: 20px 0 15px 0; color: #333;">

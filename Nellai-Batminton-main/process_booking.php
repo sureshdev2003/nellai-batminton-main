@@ -49,16 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         } else {
             $start_month = $_POST['startMonth'];
-            $start_date = $_POST['start_date'] ?? null;
             $duration = $_POST['duration'];
-            // For monthly bookings, time_slot is required
-            if (empty($time_slot)) {
-                throw new Exception('Time slot is required for monthly bookings');
-            }
-            // For monthly bookings, start_date is required
-            if (empty($start_date)) {
-                throw new Exception('Start date is required for monthly bookings');
-            }
+            // For monthly bookings, set time_slot to a default value
+            $time_slot = '00:00';
         }
         
         // Insert booking into database
@@ -75,22 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $payment_method, $payment_screenshot
         ]);
         
-        $booking_id = $pdo->lastInsertId();
-        
-        // If it's a monthly booking, also insert into monthly_bookings table
-        if ($booking_type == 'monthly') {
-            $stmt = $pdo->prepare("
-                INSERT INTO monthly_bookings (booking_id, court_slot, time_slot, start_month, duration)
-                VALUES (?, ?, ?, ?, ?)
-            ");
-            $stmt->execute([$booking_id, $court_slot, $time_slot, $start_month, $duration]);
-        }
-        
         // Send success response
         $response = [
             'success' => true,
             'message' => 'Booking submitted successfully! We will contact you shortly to confirm your booking.',
-            'booking_id' => $booking_id
+            'booking_id' => $pdo->lastInsertId()
         ];
         
         echo json_encode($response);

@@ -38,20 +38,6 @@ CREATE TABLE IF NOT EXISTS bookings (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Create monthly_bookings table for better monthly booking management
-CREATE TABLE IF NOT EXISTS monthly_bookings (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    booking_id INT NOT NULL,
-    court_slot INT NOT NULL,
-    time_slot VARCHAR(10) NOT NULL,
-    start_month VARCHAR(7) NOT NULL,
-    duration INT NOT NULL,
-    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE,
-    UNIQUE KEY unique_monthly_booking (court_slot, time_slot, start_month, duration)
-);
-
 -- Create admins table
 CREATE TABLE IF NOT EXISTS admins (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -115,4 +101,4 @@ INSERT INTO slots (court_number, time_slot, max_members, available_members) VALU
 (8, '10:00', 6, 6), (8, '11:00', 6, 6), (8, '12:00', 6, 6), (8, '13:00', 6, 6),
 (8, '14:00', 6, 6), (8, '15:00', 6, 6), (8, '16:00', 6, 6), (8, '17:00', 6, 6),
 (8, '18:00', 6, 6), (8, '19:00', 6, 6), (8, '20:00', 6, 6), (8, '21:00', 6, 6)
-ON DUPLICATE KEY UPDATE court_number=court_number;
+ON DUPLICATE KEY UPDATE available_members = VALUES(available_members);

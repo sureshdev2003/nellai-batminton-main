@@ -247,83 +247,24 @@ document.getElementById('dailyBookingForm')?.addEventListener('submit', function
     console.log('Form validation passed, submitting...');
 });
 
-// Monthly form submission (enhanced)
+// Monthly form submission (simplified)
 document.getElementById('monthlyBookingForm')?.addEventListener('submit', function(e) {
-    console.log('=== MONTHLY FORM SUBMISSION DEBUG ===');
-    
-    // Log all form data
-    const formData = new FormData(this);
-    console.log('Monthly Form Data:');
-    for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-    }
-    
-    // Check specific fields
     const selectedSlot = document.getElementById('monthlySelectedSlot').value;
-    const timeSlot = document.getElementById('monthlyTimeSlot').value;
-    const startMonth = document.getElementById('monthlyStartMonthHidden').value;
-    const startDate = document.getElementById('monthlyStartDate').value;
-    const duration = document.getElementById('monthlyDuration').value;
-    
-    console.log('Monthly hidden field values:');
-    console.log(`selectedSlot: "${selectedSlot}"`);
-    console.log(`timeSlot: "${timeSlot}"`);
-    console.log(`startMonth: "${startMonth}"`);
-    console.log(`startDate: "${startDate}"`);
-    console.log(`duration: "${duration}"`);
-    
-    // Validation checks
     if (!selectedSlot) {
-        console.log('ERROR: No court selected');
         e.preventDefault();
-        alert('Please select a court');
+        alert('Please select a court slot');
         return;
     }
 
-    if (!timeSlot) {
-        console.log('ERROR: No time slot selected');
-        e.preventDefault();
-        alert('Please select a time slot');
-        return;
-    }
-
-    if (!startMonth) {
-        console.log('ERROR: No start month selected');
-        e.preventDefault();
-        alert('Please select start month and year');
-        return;
-    }
-
-    if (!startDate) {
-        console.log('ERROR: No start date calculated');
-        e.preventDefault();
-        alert('Please select start month and year');
-        return;
-    }
-
-    if (!duration) {
-        console.log('ERROR: No duration selected');
-        e.preventDefault();
-        alert('Please select duration');
-        return;
-    }
-
-    // Payment validation
     const paymentMethod = document.querySelector('#monthlyBookingForm input[name="payment_method"]:checked');
-    console.log(`Payment method: ${paymentMethod ? paymentMethod.value : 'none'}`);
-    
     if (paymentMethod && paymentMethod.value === 'online') {
         const screenshot = document.getElementById('monthlyPaymentScreenshot').files[0];
-        console.log(`Screenshot: ${screenshot ? screenshot.name : 'none'}`);
         if (!screenshot) {
-            console.log('ERROR: No payment screenshot');
             e.preventDefault();
             alert('Please upload a payment screenshot for online payment');
             return;
         }
     }
-    
-    console.log('Monthly form validation passed, submitting...');
 });
 
 // Monthly month/year setup and availability fetch
@@ -332,7 +273,6 @@ document.getElementById('monthlyBookingForm')?.addEventListener('submit', functi
     const monthSel = document.getElementById('monthlyMonthName');
     const hiddenStart = document.getElementById('monthlyStartMonthHidden');
     const durationSel = document.getElementById('monthlyDuration');
-    const timeSlotSel = document.getElementById('monthlyTimeSlot');
 
     if (!yearSel || !monthSel || !hiddenStart) return;
 
@@ -346,35 +286,22 @@ document.getElementById('monthlyBookingForm')?.addEventListener('submit', functi
         const m = monthSel.value;
         if (y && m) {
             hiddenStart.value = `${y}-${m}`;
-            
-            // Calculate and set the start date for monthly bookings
-            const startDateField = document.getElementById('monthlyStartDate');
-            if (startDateField) {
-                const startDate = new Date(y, m - 1, 1); // First day of the selected month
-                startDateField.value = startDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
-            }
-            
-            if (durationSel && durationSel.value && timeSlotSel && timeSlotSel.value) {
-                fetchMonthlyAvailability(hiddenStart.value, durationSel.value, timeSlotSel.value);
+            if (durationSel && durationSel.value) {
+                fetchMonthlyAvailability(hiddenStart.value, durationSel.value);
             }
         } else {
             hiddenStart.value = '';
-            const startDateField = document.getElementById('monthlyStartDate');
-            if (startDateField) {
-                startDateField.value = '';
-            }
         }
     }
 
     monthSel.addEventListener('change', updateHiddenAndFetch);
     yearSel.addEventListener('change', updateHiddenAndFetch);
     if (durationSel) durationSel.addEventListener('change', updateHiddenAndFetch);
-    if (timeSlotSel) timeSlotSel.addEventListener('change', updateHiddenAndFetch);
 })();
 
-async function fetchMonthlyAvailability(startMonth, duration, timeSlot) {
+async function fetchMonthlyAvailability(startMonth, duration) {
     try {
-        const url = `check_monthly_availability.php?start_month=${encodeURIComponent(startMonth)}&duration=${encodeURIComponent(duration)}&time_slot=${encodeURIComponent(timeSlot)}`;
+        const url = `check_monthly_availability.php?start_month=${encodeURIComponent(startMonth)}&duration=${encodeURIComponent(duration)}`;
         const res = await fetch(url);
         const data = await res.json();
         if (!data.success) {
@@ -390,20 +317,12 @@ async function fetchMonthlyAvailability(startMonth, duration, timeSlot) {
             if (info) {
                 const avail = info.available;
                 const cap = info.capacity;
-                if (p) p.textContent = `Available: ${avail}/${cap} members`;
+                if (p) p.textContent = `Available: ${avail}/${cap}`;
                 if (avail <= 0) {
                     opt.classList.add('disabled');
-                    opt.style.opacity = '0.5';
-                    opt.style.cursor = 'not-allowed';
-                    if (p) p.textContent = 'Fully Booked';
                 } else {
                     opt.classList.remove('disabled');
-                    opt.style.opacity = '1';
-                    opt.style.cursor = 'pointer';
                 }
-            } else {
-                // If no data available, show default
-                if (p) p.textContent = 'Available: 6/6 members';
             }
         });
     } catch (e) {

@@ -13,22 +13,23 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="./assets/fav-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"></script>
+
 </head>
 
 <body>
     <!-- header -->
     <div class="conatiner">
         <header class="header">
-            <div class="navbar">
             <div class="logo">
                 <img src="./assets/badminton.png" class="logo-img">
                 <h1>NBA</h1>
             </div>
-            <nav >
+            <nav class="navbar">
                 <!-- Hamburger Menu Icon -->
                 <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -39,7 +40,6 @@
                     <li><a href="admin/login.php">Admin</a></li>
                 </ul>
             </nav>
-            </div>
             <!-- Mobile Menu Overlay -->
 
 
@@ -67,9 +67,8 @@
 
     </div>
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about">
             <h2>About Us</h2>
-            <div class="about">
             <div class="left">
             <p>At Nellai Batmintation Academy, we are dedicated to nurturing the next generation of badminton champions.
                 Our academy offers top-notch coaching, state-of-the-art facilities, and a supportive community for
@@ -83,7 +82,7 @@
             <div class="right">
                     <img src="./assets/slot.jpg" class="about-img">
             </div>
-          </div>
+          
 
         </section>
     <!-- Slot Booking -->
@@ -195,23 +194,23 @@
     <h2>Gallery</h2>
     <div class="gallery-slider">
         <div class="slide-track">
-            <!-- <img src="./assets/slot.jpg" alt="Gallery 1">
+            <img src="./assets/slot.jpg" alt="Gallery 1">
             <img src="./assets/slot.jpg" alt="Gallery 2">
             <img src="./assets/slot.jpg" alt="Gallery 3">
             <img src="./assets/slot.jpg" alt="Gallery 4">
             <img src="./assets/slot.jpg" alt="Gallery 5">
             <img src="./assets/slot.jpg" alt="Gallery 6">
             <img src="./assets/slot.jpg" alt="Gallery 7">
-            <img src="./assets/slot.jpg" alt="Gallery 8"> -->
+            <img src="./assets/slot.jpg" alt="Gallery 8">
             <!-- duplicate for seamless loop -->
-            <!-- <img src="./assets/slot.jpg" alt="Gallery 1">
+            <img src="./assets/slot.jpg" alt="Gallery 1">
             <img src="./assets/slot.jpg" alt="Gallery 2">
             <img src="./assets/slot.jpg" alt="Gallery 3">
             <img src="./assets/slot.jpg" alt="Gallery 4">
             <img src="./assets/slot.jpg" alt="Gallery 5">
             <img src="./assets/slot.jpg" alt="Gallery 6">
             <img src="./assets/slot.jpg" alt="Gallery 7">
-            <img src="./assets/slot.jpg" alt="Gallery 8"> -->
+            <img src="./assets/slot.jpg" alt="Gallery 8">
         </div>
     </div>
 </section>
