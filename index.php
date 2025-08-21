@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="./assets/fav-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
@@ -21,26 +22,26 @@
     <div class="conatiner">
         <header class="header">
             <div class="nav-header">
-            <div class="logo">
-                <img src="./assets/badminton.png" class="logo-img">
-                <h1>NBA</h1>
-            </div>
-            <nav class="navbar">
-                <!-- Hamburger Menu Icon -->
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="logo">
+                    <img src="./assets/logo.png" class="logo-img">
+                    <h1>NBA</h1>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <!-- <li><a href="booking.php">Slot Booking</a></li> -->
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="admin/login.php">Admin</a></li>
-                </ul>
-            </nav>
+                <nav class="navbar">
+                    <!-- Hamburger Menu Icon -->
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <!-- <li><a href="booking.php">Slot Booking</a></li> -->
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="admin/login.php">Admin</a></li>
+                    </ul>
+                </nav>
             </div>
             <!-- Mobile Menu Overlay -->
 
@@ -73,19 +74,20 @@
     <section id="about" class="about">
         <h2>About Us</h2>
         <div class="about-content">
-        <div class="left">
-            <p>At Nellai Batmintation Academy, we are dedicated to nurturing the next generation of badminton champions.
-                Our academy offers top-notch coaching, state-of-the-art facilities, and a supportive community for
-                players of all levels.</p>
-            <p>Whether you're a beginner looking to learn the basics or an experienced player aiming to refine your
-                skills, our expert coaches are here to guide you every step of the way.</p>
-            <p>Join us in our mission to promote the sport of badminton and help you achieve your athletic goals.
-                Together, we can elevate your game to new heights!</p>
-            <button class="btn">Learn More</button>
-        </div>
-        <div class="right">
-            <img src="./assets/slot.jpg" class="about-img">
-        </div>
+            <div class="left">
+                <p>At Nellai Batmintation Academy, we are dedicated to nurturing the next generation of badminton
+                    champions.
+                    Our academy offers top-notch coaching, state-of-the-art facilities, and a supportive community for
+                    players of all levels.</p>
+                <p>Whether you're a beginner looking to learn the basics or an experienced player aiming to refine your
+                    skills, our expert coaches are here to guide you every step of the way.</p>
+                <p>Join us in our mission to promote the sport of badminton and help you achieve your athletic goals.
+                    Together, we can elevate your game to new heights!</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="right">
+                <img src="./assets/slot.jpg" class="about-img">
+            </div>
         </div>
 
 
@@ -133,15 +135,25 @@
                 <div class="slot-1" data-court="1">
                     <img src="./assets/slot.jpg" alt="Slot 1">
                     <h3>Court-1</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
                 <div class="slot-2" data-court="2">
                     <img src="./assets/slot.jpg" alt="Slot 2">
                     <h3>Court-2</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
                 <div class="slot-3" data-court="3">
@@ -153,37 +165,63 @@
                 </div>
                 <div class="slot-4" data-court="4">
                     <img src="./assets/slot.jpg" alt="Slot 4">
-                    <h3>Court-4</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <h3>Court- 4</h3>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
+
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
                 <div class="slot-5" data-court="5">
                     <img src="./assets/slot.jpg" alt="Slot 5">
                     <h3>Court-5</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
                 <div class="slot-6" data-court="6">
                     <img src="./assets/slot.jpg" alt="Slot 6">
                     <h3>Court-6</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
                 <div class="slot-7" data-court="7">
                     <img src="./assets/slot.jpg" alt="Slot 7">
                     <h3>Court-7</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
                 <div class="slot-8" data-court="8">
                     <img src="./assets/slot.jpg" alt="Slot 8">
                     <h3>Court-8</h3>
-                    <p class="availability-status">Select date and time to check availability</p>
-                    <p class="member-info">Max: 6 members per slot</p>
+                    <p class="availability-status status-available">
+                        <i class="fa-solid fa-circle-check"></i> Available
+                    </p>
+
+                    <p class="availability-status status-booked">
+                        <i class="fa-solid fa-circle-xmark"></i> Completed
+                    </p>
                     <a href="booking.php" class="btn">Book Now</a>
                 </div>
             </div>
@@ -207,15 +245,7 @@
                 <img src="./assets/slot.jpg" alt="Gallery 6">
                 <img src="./assets/slot.jpg" alt="Gallery 7">
                 <img src="./assets/slot.jpg" alt="Gallery 8">
-                <!-- duplicate for seamless loop -->
-                <img src="./assets/slot.jpg" alt="Gallery 1">
-                <img src="./assets/slot.jpg" alt="Gallery 2">
-                <img src="./assets/slot.jpg" alt="Gallery 3">
-                <img src="./assets/slot.jpg" alt="Gallery 4">
-                <img src="./assets/slot.jpg" alt="Gallery 5">
-                <img src="./assets/slot.jpg" alt="Gallery 6">
-                <img src="./assets/slot.jpg" alt="Gallery 7">
-                <img src="./assets/slot.jpg" alt="Gallery 8">
+              
             </div>
         </div>
     </section>
