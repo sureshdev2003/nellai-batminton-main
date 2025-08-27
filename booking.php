@@ -20,27 +20,6 @@
 <body>
     <!-- Header -->
     <div class="conatiner">
-        <header class="header">
-            <div class="logo">
-                <img src="./assets/badminton.png" class="logo-img">
-                <h1>NBA</h1>
-            </div>
-            <nav class="navbar">
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.php#home">Home</a></li>
-                    <li><a href="index.php#about">About</a></li>
-                    <!-- <li><a href="index.php#slot">Slot Booking</a></li> -->
-                    <li><a href="index.php#gallery">Gallery</a></li>
-                    <li><a href="index.php#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
 
     <!-- Plan Selection Popup -->
     <div class="plan-popup" id="planPopup">
